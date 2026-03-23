@@ -10,14 +10,14 @@ public class BetAmount {
         this.amount = amount;
     }
 
-    public static BetAmount of(Integer number) {
-        return new BetAmount(number);
-    }
-
     private void validate(int amount) {
         if (amount < DEFAULT_BETTING_AMOUNT) {
             throw new IllegalArgumentException("[ERROR] 베팅 금액은 음수가 될 수 없습니다.");
         }
+    }
+
+    public static BetAmount of(Integer number) {
+        return new BetAmount(number);
     }
 
     public int getAmount() {
